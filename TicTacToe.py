@@ -17,6 +17,11 @@ def moveCheck(arr, move):
 			return False	
 	return True
 
+def checkForWinner(board):
+	#Logic to check game for winner,probably a pretty important aspect of this project
+	print('Check for winner')
+
+
 # Start The Game
 def playGame(moves=0, turn=True):
 	moveCount = moves
@@ -29,6 +34,10 @@ def playGame(moves=0, turn=True):
 	      + ' | ' + gameBoard[7] + ' | ' + gameBoard[8])
 
 	while moveCount < len(gameBoard):
+		# Check for a winner if more than 2 moves have been made
+		if moveCount > 2:
+			checkForWinner(gameBoard)
+
 	    position = input('Please enter the position of your move: ')
 
 	    # Prevent user from inputting a space already occupied...maybe use try catch instead here?  nested while loops are scary
@@ -67,7 +76,7 @@ def playGame(moves=0, turn=True):
 playGame()
 
 
-
+# TODO: Forgot the win condition!!!! duh...
 
 
 
